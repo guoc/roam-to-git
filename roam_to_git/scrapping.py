@@ -252,6 +252,7 @@ def signin(browser: Browser, config: Config, sleep_duration=1.):
     """Sign-in into Roam"""
     logger.debug("Opening signin page")
     browser.get('https://roamresearch.com/#/signin')
+    time.sleep(2.0)
 
     logger.debug("Waiting for  email and password fields", config.user)
     while True:
