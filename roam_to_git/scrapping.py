@@ -222,6 +222,8 @@ def _download_rr_archive(browser: Browser,
     if output_type.lower() != dropdown_button.text.lower():
         logger.debug("Changing output type to {}", output_type)
         dropdown_button.click()
+        if output_type == "markdown":
+            output_type = "flat markdown"
         output_type_elem = browser.find_element_by_link_text(output_type.upper())
         output_type_elem.click()
 
